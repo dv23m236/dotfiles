@@ -1,0 +1,92 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Insert a blank line between shell prompts
+add_newline = true
+
+# Nutzt die bewährte Farbpalette deines Freundes
+palette = "gruvbox-dark"
+
+# Ein neues, sauber strukturiertes Layout mit dezenten Trennzeichen
+format = """
+$username\
+$hostname\
+[•](gray2) \
+$directory\
+$git_branch\
+$git_status\
+$fill\
+$cmd_duration\
+$line_break\
+$character"""
+
+[fill]
+symbol = " "
+
+[character]
+# Ein moderneres Dreieck-Symbol anstelle des Pfeils
+success_symbol = "[▲](bold green)"
+error_symbol = "[▼](bold red)"
+
+[directory]
+# Zeigt den Pfad in hellem Aqua-Blau an und kürzt ihn eleganter ab
+format = "[ $path]($style)[$read_only]($read_only_style) "
+style = "aqua"
+truncation_length = 4
+truncation_symbol = "…/"
+
+[git_branch]
+# Der Branch wird in hellem Grün dargestellt, um sich vom Pfad abzuheben
+format = "[on](gray) [$symbol$branch]($style) "
+style = "green2"
+symbol = " "
+
+[git_status]
+# Kompakteres Git-Status-Layout mit Trennstrichen (|)
+format = "([| $all_status$ahead_behind]($style)) "
+style = "orange"
+conflicted = "="
+ahead = "⇡${count}"
+behind = "⇣${count}"
+diverged = "⇕"
+untracked = "?${count}"
+stashed = "$"
+modified = "!${count}"
+staged = "+${count}"
+deleted = "×${count}"
+
+[cmd_duration]
+# Dezenter formatiert am rechten Bildschirmrand
+format = "[🕒 $duration]($style)"
+style = "gray2"
+min_time = 3_000
+
+[username]
+format = "[$user]($style)"
+show_always = true
+style_user = "yellow2"
+
+[hostname]
+format = "[@$hostname]($style) "
+ssh_only = true # Zeigt den Hostnamen nur an, wenn du wirklich auf einem Server bist
+style = "yellow"
+
+# Die Farbpalette deines Freundes bleibt als Basis erhalten
+[palettes.gruvbox-dark]
+red     = "#cc241d"
+red2    = "#fb4934"
+green   = "#98971a"
+green2  = "#b8bb26"
+yellow  = "#d79921"
+yellow2 = "#fabd2f"
+blue    = "#458588"
+blue2   = "#83a598"
+purple  = "#b16286"
+purple2 = "#d3869b"
+aqua    = "#689d6a"
+aqua2   = "#8ec07c"
+orange  = "#d65d0e"
+orange2 = "#fe8019"
+gray    = "#928374"
+gray2   = "#a89984"
+bg      = "#282828"
