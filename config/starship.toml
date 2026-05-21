@@ -25,8 +25,8 @@ symbol = " "
 
 [character]
 # Ein moderneres Dreieck-Symbol anstelle des Pfeils
-success_symbol = "[▲](bold green)"
-error_symbol = "[▼](bold red)"
+success_symbol = "[✓](#00ff00)"
+error_symbol = "[✗](#fb4934)"
 
 [directory]
 # Zeigt den Pfad in hellem Aqua-Blau an und kürzt ihn eleganter ab
