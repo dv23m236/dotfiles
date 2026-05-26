@@ -4,7 +4,6 @@
 # Insert a blank line between shell prompts
 add_newline = true
 
-# Nutzt die bewährte Farbpalette deines Freundes
 palette = "gruvbox-dark"
 
 # Ein neues, sauber strukturiertes Layout mit dezenten Trennzeichen
@@ -12,6 +11,7 @@ format = """
 $username\
 $hostname\
 [•](gray2) \
+$conda\
 $directory\
 $git_branch\
 $git_status\
@@ -28,10 +28,15 @@ symbol = " "
 success_symbol = "[✓](#00ff00)"
 error_symbol = "[✗](#fb4934)"
 
+[conda]
+# Lila signalisiert sofort: "Achtung, das ist eine virtuelle Python-Box"
+format = "[🅲 $environment](bold purple2) "
+ignore_base = false
+
 [directory]
-# Zeigt den Pfad in hellem Aqua-Blau an und kürzt ihn eleganter ab
+# Zeigt den Pfad im hellen, kontrastreichen Aqua-Blau an (aqua2)
 format = "[ $path]($style)[$read_only]($read_only_style) "
-style = "aqua"
+style = "aqua2"
 truncation_length = 4
 truncation_symbol = "…/"
 
@@ -42,9 +47,9 @@ style = "green2"
 symbol = " "
 
 [git_status]
-# Kompakteres Git-Status-Layout mit Trennstrichen (|)
+# Kräftigeres Orange (orange2) für ungespeicherte Änderungen und Warnungen
 format = "([| $all_status$ahead_behind]($style)) "
-style = "orange"
+style = "orange2"
 conflicted = "="
 ahead = "⇡${count}"
 behind = "⇣${count}"
@@ -71,7 +76,7 @@ format = "[@$hostname]($style) "
 ssh_only = true # Zeigt den Hostnamen nur an, wenn du wirklich auf einem Server bist
 style = "yellow"
 
-# Die Farbpalette deines Freundes bleibt als Basis erhalten
+
 [palettes.gruvbox-dark]
 red     = "#cc241d"
 red2    = "#fb4934"
