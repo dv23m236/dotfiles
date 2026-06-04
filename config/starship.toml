@@ -16,6 +16,7 @@ $directory\
 $git_branch\
 $git_status\
 $fill\
+$all\
 $cmd_duration\
 $line_break\
 $character"""
@@ -76,6 +77,10 @@ format = "[@$hostname]($style) "
 ssh_only = true # Zeigt den Hostnamen nur an, wenn du wirklich auf einem Server bist
 style = "yellow"
 
+[azure]
+disabled = false
+format = 'in [$symbol$subscription]($style) '
+style = 'blue'
 
 [palettes.gruvbox-dark]
 red     = "#cc241d"
