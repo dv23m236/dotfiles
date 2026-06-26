@@ -19,7 +19,7 @@ Persönliche Konfigurationen mit modularem Zsh-Setup.
 
 - Alle echten Module liegen im Repository unter `config/zsh`.
 - In `~/.zsh` liegen nur Symlinks auf diese Module.
-- `~/.zshrc` laedt alle `*.zsh` Dateien aus `~/.zsh` alphabetisch.
+- `~/.zshrc` lädt alle `*.zsh` Dateien aus `~/.zsh` alphabetisch.
 
 ## Setup
 
