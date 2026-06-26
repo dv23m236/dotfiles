@@ -2,6 +2,10 @@
 # AUTO-COMPLETION CONFIGURATION
 # ====================================================================
 
+if [ -z "$HOMEBREW_PREFIX" ] && command -v brew >/dev/null 2>&1; then
+  export HOMEBREW_PREFIX="$(brew --prefix)"
+fi
+
 # 1. Homebrew-Pfade laden (wichtig für Mac-User, damit Befehle gefunden werden)
 if [ -d "$HOMEBREW_PREFIX/share/zsh/site-functions" ]; then
   FPATH="$HOMEBREW_PREFIX/share/zsh/site-functions:${FPATH}"
@@ -32,3 +36,4 @@ zstyle ':completion:*:warnings' format ' %F{red}-- Keine Treffer gefunden --%f'
 
 # 9. Doppelte Slashes (//) automatisch zu einem / zusammenfassen
 zstyle ':completion:*' squeeze-slashes true
+
